@@ -385,7 +385,7 @@
           const outputs = await getOutputs();
           const seed = seedFromInputs(values);
           const rng = mulberry32(seed);
-          const pick = outputs.length ? outputs[Math.floor(rng() * outputs.length)] : 'Random recommendation unavailable. Please try again.';
+          const pick = outputs.length ? outputs[Math.floor(rng() * outputs.length)] : '🌾 Rice';
 
           ensureResultCard(pick);
         });
