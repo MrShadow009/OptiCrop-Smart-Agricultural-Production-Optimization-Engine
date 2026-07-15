@@ -343,10 +343,23 @@
 
         async function getOutputs() {
           // Served from /random_outputs.json via vercel.json
-          const res = await fetch('/random_outputs.json', { cache: 'no-store' });
-          const data = await res.json();
-          return data && Array.isArray(data.outputs) ? data.outputs : [];
+          try {
+            const res = await fetch('/random_outputs.json', { cache: 'no-store' });
+            if (!res.ok) {
+              console.error('Failed to fetch random_outputs.json:', res.status);
+              return [];
+            }
+            const data = await res.json();
+            // Accept either { outputs: [...] } or direct array
+            if (Array.isArray(data)) return data;
+            if (data && Array.isArray(data.outputs)) return data.outputs;
+            return [];
+          } catch (err) {
+            console.error('Error fetching random_outputs.json:', err);
+            return [];
+          }
         }
+
 
         form.addEventListener('submit', async function (e) {
           // Frontend-only so we don't crash due to missing backend
