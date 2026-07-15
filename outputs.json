@@ -1,0 +1,11 @@
+{
+  "description": "Static/random placeholder output for crop recommendation based on random input values.",
+  "outputs": [
+    "Tomato works well with moderate nitrogen and steady rainfall.",
+    "Wheat prefers balanced NPK with warm temperatures and medium pH.",
+    "Rice thrives with high humidity and consistent rainfall patterns.",
+    "Corn performs best with strong potassium and adequate moisture.",
+    "Soybean is suitable for soils with balanced nutrients and mild pH."
+  ]
+}
+
