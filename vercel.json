@@ -6,7 +6,9 @@
     { "src": "/random_outputs.json", "dest": "/random_outputs.json" },
     { "src": "/$", "dest": "/templates/index.html" },
     { "src": "/(.*)", "dest": "/templates/index.html" }
-  ]
+  ],
+  "output": "export"
 }
+
 
 
