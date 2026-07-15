@@ -3,9 +3,9 @@
   "framework": null,
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/templates/(.*)", "dest": "/templates/$1" },
     { "src": "/random_output.json", "dest": "/random_output.json" },
-    { "src": "/(.*)", "dest": "app.py" }
+    { "src": "^(?:/(.*))?$", "dest": "app.py" }
   ]
 }
+
 
