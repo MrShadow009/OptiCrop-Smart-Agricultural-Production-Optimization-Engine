@@ -12,7 +12,7 @@ def load_random_outputs(json_path: str):
 
 
 # Load static/random recommendation pool once at startup
-JSON_OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "random_output.json")
+JSON_OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "random_outputs.json")
 _random_outputs = load_random_outputs(JSON_OUTPUT_PATH)
 if not _random_outputs:
     # Safe fallback if json is missing/empty
