@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "framework": null,
+  "routes": [
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/templates/(.*)", "dest": "/templates/$1" },
+    { "src": "/random_output.json", "dest": "/random_output.json" },
+    { "src": "/(.*)", "dest": "app.py" }
+  ],
+  "includeFiles": [
+    "app.py",
+    "random_output.json",
+    "static/img.jpg",
+    "templates/index.html",
+    "templates/_ui_styles.html"
+  ]
+}
+
