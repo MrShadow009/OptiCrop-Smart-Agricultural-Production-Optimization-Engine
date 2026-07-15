@@ -188,12 +188,12 @@
 
 <!--==========================================================================================-->
   <div class="container my-3 mt-3 app-container">
-      <div class="hero">
+          <div class="hero">
         <div>
           <h1 class="app-title">Crop Recommendation System <span>🌱</span></h1>
           <p class="app-subtitle">Enter soil and weather parameters to get an instant crop recommendation.</p>
         </div>
-        <img class="hero-badge" src="{{url_for('static', filename='img.jpg')}}" alt="Farm illustration" loading="lazy"/>
+        <img class="hero-badge" src="/static/img.jpg" alt="Farm illustration" loading="lazy"/>
       </div>
 
       <div class="app-divider"></div>
@@ -250,15 +250,7 @@
 
 
 
-       {% if result %}
-		<div class="card bg-dark" style="width: 18rem;">
-		  <img src="{{url_for('static', filename='img.jpg')}}" class="card-img-top" alt="...">
-		  <div class="card-body">
-			<h5 class="card-title">Recommend Crop for cultivation is:</h5>
-			<p class="card-text">{{ result }}</p>
-		  </div>
-		</div>
-	   {% endif %}
+
   </div>
 
   <footer id="footer" class="footer">
