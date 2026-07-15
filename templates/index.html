@@ -344,21 +344,25 @@
         async function getOutputs() {
           // Served from /random_outputs.json via vercel.json
           try {
+            // In our repo the file is random_outputs.json (plural) and is exposed by vercel.json.
             const res = await fetch('/random_outputs.json', { cache: 'no-store' });
             if (!res.ok) {
-              console.error('Failed to fetch random_outputs.json:', res.status);
+              console.error('Failed to fetch /random_outputs.json:', res.status);
               return [];
             }
             const data = await res.json();
             // Accept either { outputs: [...] } or direct array
             if (Array.isArray(data)) return data;
             if (data && Array.isArray(data.outputs)) return data.outputs;
+
+            console.error('Unexpected random_outputs.json shape:', data);
             return [];
           } catch (err) {
-            console.error('Error fetching random_outputs.json:', err);
+            console.error('Error fetching /random_outputs.json:', err);
             return [];
           }
         }
+
 
 
         form.addEventListener('submit', async function (e) {
